@@ -2,475 +2,1498 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>ÉVIDA — Découvrez l'évidence</title>
+<title>ÉVIDA — Boutique</title>
 
-<meta name="description" content="ÉVIDA sélectionne des produits utiles, ingénieux et surprenants pour améliorer le quotidien.">
+<meta
+  name="description"
+  content="ÉVIDA — Des découvertes utiles, ingénieuses et surprenantes pour le quotidien."
+>
 
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+:root{
+  --bg:#f6f3ed;
+  --card:#fff;
+  --text:#151515;
+  --muted:#777069;
+  --line:#e4dfd6;
+  --dark:#171717;
 }
 
-html {
-  scroll-behavior: smooth;
+*{
+  box-sizing:border-box;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f8f7f4;
-  color: #171717;
+html{
+  scroll-behavior:smooth;
 }
 
-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: rgba(248,247,244,0.96);
-  border-bottom: 1px solid #e5e3de;
-  padding: 18px 6%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
 }
 
-.logo {
-  font-size: 25px;
-  font-weight: 800;
-  letter-spacing: 5px;
+a{
+  color:inherit;
+  text-decoration:none;
 }
 
-.header-link {
-  text-decoration: none;
-  color: #171717;
-  font-size: 13px;
-  font-weight: 700;
+button,
+input{
+  font:inherit;
 }
 
-.hero {
-  padding: 80px 7% 75px;
-  text-align: center;
-  background: #ece9e1;
+button{
+  cursor:pointer;
 }
 
-.eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 11px;
-  font-weight: 700;
+.top{
+  background:#171717;
+  color:#fff;
+  text-align:center;
+  padding:9px 16px;
+  font-size:12px;
 }
 
-.hero h1 {
-  max-width: 800px;
-  margin: 18px auto;
-  font-size: clamp(44px, 11vw, 82px);
-  line-height: 0.95;
-  letter-spacing: -4px;
+header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(246,243,237,.95);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
 }
 
-.hero p {
-  max-width: 590px;
-  margin: 0 auto 30px;
-  color: #5d5d5d;
-  font-size: 17px;
+.nav{
+  max-width:1240px;
+  margin:auto;
+  padding:16px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
 }
 
-.button {
-  display: inline-block;
-  padding: 15px 27px;
-  background: #171717;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: 700;
-  font-size: 13px;
+.logo{
+  font-weight:900;
+  letter-spacing:.18em;
+  font-size:26px;
 }
 
-section {
-  max-width: 1180px;
-  margin: auto;
-  padding: 65px 6%;
+.navlinks{
+  display:flex;
+  gap:22px;
+  font-size:14px;
 }
 
-.section-label {
-  color: #777;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 11px;
-  font-weight: 700;
-  margin-bottom: 8px;
+.cartBtn{
+  border:0;
+  background:#171717;
+  color:#fff;
+  border-radius:999px;
+  padding:11px 16px;
+  font-weight:800;
 }
 
-.section-title {
-  font-size: 32px;
-  margin-bottom: 28px;
-  letter-spacing: -1px;
+.hero{
+  max-width:1240px;
+  margin:auto;
+  padding:72px 20px 38px;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:28px;
+  align-items:center;
 }
 
-.categories {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+.eyebrow{
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-size:11px;
+  color:var(--muted);
+  font-weight:800;
 }
 
-.category {
-  background: white;
-  border: 1px solid #e6e4df;
-  border-radius: 10px;
-  padding: 28px 12px;
-  text-align: center;
-  text-decoration: none;
-  color: #171717;
-  font-weight: 700;
-  transition: transform .2s;
+h1{
+  font-size:clamp(54px,7vw,94px);
+  line-height:.93;
+  letter-spacing:-.055em;
+  margin:12px 0 20px;
 }
 
-.category:hover {
-  transform: translateY(-3px);
+.hero p{
+  font-size:18px;
+  line-height:1.6;
+  color:var(--muted);
+  max-width:660px;
 }
 
-.category-icon {
-  display: block;
-  font-size: 35px;
-  margin-bottom: 10px;
+.heroCard{
+  border:1px solid var(--line);
+  background:linear-gradient(145deg,#ede6dc,#fff);
+  border-radius:30px;
+  padding:30px;
+  min-height:330px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
 }
 
-.feature {
-  background: #171717;
-  color: white;
-  max-width: none;
+.heroCard strong{
+  font-size:34px;
+  line-height:1.05;
 }
 
-.feature-inner {
-  max-width: 1180px;
-  margin: auto;
-  padding: 0 6%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 45px;
-  align-items: center;
+.heroCard small{
+  color:var(--muted);
 }
 
-.feature-image {
-  min-height: 330px;
-  border-radius: 14px;
-  background: #292929;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 100px;
+.wrap{
+  max-width:1240px;
+  margin:auto;
+  padding:30px 20px 70px;
 }
 
-.feature-content .section-label {
-  color: #aaa;
+.wrap h2{
+  font-size:clamp(32px,5vw,55px);
+  margin:10px 0 20px;
+  letter-spacing:-.04em;
 }
 
-.feature-content h2 {
-  font-size: 42px;
-  line-height: 1;
-  margin-bottom: 18px;
+.toolbar{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+  margin:20px 0;
 }
 
-.feature-content p {
-  color: #c8c8c8;
-  margin-bottom: 25px;
+.search{
+  flex:1;
+  min-width:220px;
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:12px;
+  padding:12px 14px;
 }
 
-.feature .button {
-  background: white;
-  color: #171717;
+.filters{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
 }
 
-.products {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+.filter{
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:999px;
+  padding:10px 13px;
 }
 
-.product {
-  background: white;
-  border: 1px solid #e6e4df;
-  border-radius: 12px;
-  overflow: hidden;
+.filter.active{
+  background:#171717;
+  color:#fff;
+  border-color:#171717;
 }
 
-.product-image {
-  height: 220px;
-  background: #e7e4dd;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 75px;
+.notice{
+  background:#fff;
+  border:1px solid var(--line);
+  padding:16px 18px;
+  border-radius:14px;
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:18px;
+  line-height:1.55;
 }
 
-.product-info {
-  padding: 22px;
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
 }
 
-.product-tag {
-  text-transform: uppercase;
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  color: #777;
-  font-weight: 700;
+.product{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:20px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+  transition:.2s ease;
 }
 
-.product h3 {
-  margin: 9px 0;
-  font-size: 21px;
+.product:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 45px rgba(0,0,0,.08);
 }
 
-.product p {
-  color: #666;
-  font-size: 14px;
-  margin-bottom: 20px;
+.visual{
+  aspect-ratio:1/1;
+  background:linear-gradient(145deg,#eee8de,#faf8f4);
+  overflow:hidden;
+  position:relative;
 }
 
-.product-link {
-  color: #171717;
-  font-weight: 700;
-  text-decoration: none;
-  font-size: 13px;
+.visual img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
 
-.about {
-  max-width: none;
-  background: #e9e6de;
-  text-align: center;
+.imageFallback{
+  width:100%;
+  height:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:30px;
+  font-weight:900;
+  font-size:19px;
+  line-height:1.25;
 }
 
-.about p {
-  max-width: 650px;
-  margin: auto;
-  color: #555;
+.body{
+  padding:15px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  flex:1;
 }
 
-footer {
-  padding: 40px 6%;
-  background: #171717;
-  color: #aaa;
-  text-align: center;
-  font-size: 12px;
+.tag{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:var(--muted);
 }
 
-footer strong {
-  color: white;
-  letter-spacing: 3px;
+.body h3{
+  font-size:15px;
+  line-height:1.28;
+  margin:0;
 }
 
-@media (max-width: 750px) {
-  .categories {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.supplier{
+  font-size:11px;
+  color:var(--muted);
+  line-height:1.35;
+}
 
-  .products {
-    grid-template-columns: 1fr;
-  }
+.foot{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  margin-top:auto;
+  padding-top:8px;
+}
 
-  .feature-inner {
-    grid-template-columns: 1fr;
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
+.price{
+  font-weight:900;
+  font-size:18px;
+}
 
-  .feature-image {
-    min-height: 240px;
-  }
+.add{
+  border:0;
+  background:#171717;
+  color:#fff;
+  border-radius:10px;
+  padding:9px 11px;
+  font-weight:800;
+}
 
-  .feature-content h2 {
-    font-size: 35px;
-  }
+.details{
+  width:100%;
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:10px;
+  padding:9px 11px;
+  font-weight:800;
+  margin-top:5px;
+}
 
-  section {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.4);
+  z-index:90;
+  display:none;
+}
+
+.overlay.show{
+  display:block;
+}
+
+.drawer{
+  position:fixed;
+  right:-460px;
+  top:0;
+  width:min(430px,94vw);
+  height:100vh;
+  background:#fff;
+  z-index:100;
+  padding:22px;
+  box-shadow:-20px 0 60px rgba(0,0,0,.2);
+  transition:.25s;
+  display:flex;
+  flex-direction:column;
+}
+
+.drawer.open{
+  right:0;
+}
+
+.drawerHead{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid var(--line);
+  padding-bottom:14px;
+}
+
+.close{
+  border:0;
+  background:#eee;
+  border-radius:50%;
+  width:38px;
+  height:38px;
+  font-size:20px;
+}
+
+.cartItems{
+  overflow:auto;
+  flex:1;
+}
+
+.cartItem{
+  padding:14px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.cartItemTop{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.cartActions{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  margin-top:8px;
+}
+
+.cartActions button{
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:7px;
+  min-width:31px;
+  height:31px;
+}
+
+.total{
+  display:flex;
+  justify-content:space-between;
+  font-size:20px;
+  font-weight:900;
+  padding:16px 0;
+}
+
+.checkout{
+  width:100%;
+  border:0;
+  background:#171717;
+  color:#fff;
+  border-radius:12px;
+  padding:14px;
+  font-weight:900;
+}
+
+.productModalOverlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  z-index:190;
+  display:none;
+  padding:24px;
+  overflow:auto;
+}
+
+.productModalOverlay.show{
+  display:block;
+}
+
+.productModal{
+  width:min(980px,100%);
+  margin:30px auto;
+  background:#fff;
+  border-radius:24px;
+  overflow:hidden;
+  position:relative;
+}
+
+.productModalClose{
+  position:absolute;
+  right:16px;
+  top:16px;
+  z-index:3;
+  width:42px;
+  height:42px;
+  border:0;
+  border-radius:50%;
+  background:#171717;
+  color:#fff;
+  font-size:24px;
+}
+
+.productModalGrid{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+}
+
+.productModalVisual{
+  min-height:500px;
+  background:#eee8de;
+}
+
+.productModalVisual img{
+  width:100%;
+  height:100%;
+  min-height:500px;
+  object-fit:cover;
+}
+
+.productModalInfo{
+  padding:42px;
+}
+
+.productModalInfo h2{
+  font-size:34px;
+  line-height:1.08;
+  margin:8px 0 12px;
+}
+
+.productModalPrice{
+  font-size:28px;
+  font-weight:900;
+  margin:14px 0 22px;
+}
+
+.productDescription{
+  line-height:1.65;
+  color:#4f4a45;
+}
+
+.productModalAdd{
+  width:100%;
+  border:0;
+  background:#171717;
+  color:#fff;
+  border-radius:12px;
+  padding:15px;
+  font-weight:900;
+  margin-top:18px;
+}
+
+.sourceLink{
+  display:block;
+  width:100%;
+  text-align:center;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:13px;
+  margin-top:10px;
+  font-weight:800;
+}
+
+footer{
+  border-top:1px solid var(--line);
+  padding:32px 20px;
+  color:var(--muted);
+  font-size:12px;
+  text-align:center;
+}
+
+@media(max-width:1050px){
+  .grid{grid-template-columns:repeat(3,1fr);}
+  .hero{grid-template-columns:1fr;}
+}
+
+@media(max-width:760px){
+  .navlinks{display:none;}
+  .grid{grid-template-columns:repeat(2,1fr);}
+  .productModalGrid{grid-template-columns:1fr;}
+  .productModalVisual{min-height:300px;}
+  .productModalVisual img{min-height:300px;}
+  .productModalInfo{padding:24px;}
+}
+
+@media(max-width:480px){
+  .grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
 
 <body>
 
+<div class="top">
+  ÉVIDA — Découvrez l'évidence.
+</div>
+
 <header>
-  <div class="logo">ÉVIDA</div>
-  <a class="header-link" href="#categories">EXPLORER</a>
+  <div class="nav">
+
+    <a class="logo" href="#">
+      ÉVIDA
+    </a>
+
+    <nav class="navlinks">
+      <a href="#boutique">Boutique</a>
+      <a href="#infos">Informations</a>
+    </nav>
+
+    <button class="cartBtn" id="openCart">
+      Panier <span id="cartCount">0</span>
+    </button>
+
+  </div>
 </header>
 
 <main>
 
 <section class="hero">
-  <div class="eyebrow">La sélection ÉVIDA</div>
 
-  <h1>Découvrez l'évidence.</h1>
-
-  <p>
-    Les produits dont vous ne saviez pas avoir besoin...
-    jusqu'à maintenant.
-  </p>
-
-  <a class="button" href="#trouvailles">VOIR LES TROUVAILLES</a>
-</section>
-
-<section id="categories">
-
-  <div class="section-label">Explorer</div>
-  <h2 class="section-title">Qu'est-ce qui vous intéresse ?</h2>
-
-  <div class="categories">
-
-    <a class="category" href="#animaux">
-      <span class="category-icon">🐾</span>
-      Animaux
-    </a>
-
-    <a class="category" href="#maison">
-      <span class="category-icon">🏠</span>
-      Maison
-    </a>
-
-    <a class="category" href="#beaute">
-      <span class="category-icon">💄</span>
-      Beauté
-    </a>
-
-    <a class="category" href="#trouvailles">
-      <span class="category-icon">✨</span>
-      Trouvailles
-    </a>
-
-  </div>
-</section>
-
-<section class="feature">
-
-  <div class="feature-inner">
-
-    <div class="feature-image">
-      💧
+  <div>
+    <div class="eyebrow">
+      Sélection ÉVIDA · France
     </div>
 
-    <div class="feature-content">
+    <h1>
+      Moins chercher.<br>
+      Mieux découvrir.
+    </h1>
 
-      <div class="section-label">La trouvaille du moment</div>
+    <p>
+      23 trouvailles utiles sélectionnées autour de la maison,
+      de l'organisation, de la tech pratique, du voyage et des animaux.
+    </p>
+  </div>
 
-      <h2>Une idée simple qui peut changer le quotidien.</h2>
+  <div class="heroCard">
+    <strong>
+      Des objets simples qui améliorent le quotidien.
+    </strong>
 
-      <p>
-        Nous sélectionnons des produits qui répondent à de vrais
-        besoins et qui méritent d'être découverts.
-      </p>
-
-      <a class="button" href="#trouvailles">
-        DÉCOUVRIR
-      </a>
-
-    </div>
-
+    <small>
+      Maison · Innovation · Voyage · Animaux
+    </small>
   </div>
 
 </section>
 
-<section id="trouvailles">
+<section class="wrap" id="boutique">
 
-  <div class="section-label">Notre sélection</div>
-  <h2 class="section-title">Les trouvailles ÉVIDA</h2>
-
-  <div class="products">
-
-    <article class="product" id="animaux">
-
-      <div class="product-image">🐾</div>
-
-      <div class="product-info">
-        <div class="product-tag">Animaux</div>
-
-        <h3>Brosse anti-poils</h3>
-
-        <p>
-          Une solution pratique pour retirer les poils
-          des tissus et du mobilier.
-        </p>
-
-        <a class="product-link" href="#">
-          Découvrir le produit →
-        </a>
-      </div>
-
-    </article>
-
-    <article class="product">
-
-      <div class="product-image">💧</div>
-
-      <div class="product-info">
-        <div class="product-tag">Animaux</div>
-
-        <h3>Fontaine pour animaux</h3>
-
-        <p>
-          Une façon pratique de rendre l'accès à l'eau
-          plus simple pour votre compagnon.
-        </p>
-
-        <a class="product-link" href="#">
-          Découvrir le produit →
-        </a>
-      </div>
-
-    </article>
-
-    <article class="product" id="maison">
-
-      <div class="product-image">💡</div>
-
-      <div class="product-info">
-        <div class="product-tag">Maison</div>
-
-        <h3>Lampe à détection</h3>
-
-        <p>
-          Une lumière automatique pratique pour les
-          endroits où vous en avez besoin.
-        </p>
-
-        <a class="product-link" href="#">
-          Découvrir le produit →
-        </a>
-      </div>
-
-    </article>
-
+  <div class="eyebrow">
+    La sélection
   </div>
-</section>
 
-<section class="about" id="beaute">
-
-  <div class="section-label">Notre philosophie</div>
-
-  <h2 class="section-title">
-    Moins chercher. Mieux découvrir.
+  <h2>
+    Les 23 trouvailles ÉVIDA
   </h2>
 
-  <p>
-    ÉVIDA sélectionne des produits utiles, ingénieux et
-    surprenants pour la maison, les animaux, la beauté
-    et le quotidien.
-  </p>
+  <div class="toolbar">
+
+    <input
+      class="search"
+      id="search"
+      type="search"
+      placeholder="Rechercher un produit..."
+    >
+
+    <div class="filters">
+
+      <button class="filter active" data-category="Tous">
+        Tous
+      </button>
+
+      <button class="filter" data-category="Maison">
+        Maison
+      </button>
+
+      <button class="filter" data-category="Innovation">
+        Innovation
+      </button>
+
+      <button class="filter" data-category="Voyage">
+        Voyage
+      </button>
+
+      <button class="filter" data-category="Animaux">
+        Animaux
+      </button>
+
+    </div>
+
+  </div>
+
+  <div class="notice" id="infos">
+    Les prix affichés sont les prix de vente actuellement retenus
+    pour les tests ÉVIDA. Les disponibilités et conditions fournisseur
+    seront vérifiées avant l'ouverture commerciale définitive.
+  </div>
+
+  <div class="grid" id="grid"></div>
 
 </section>
 
 </main>
 
 <footer>
-  <strong>ÉVIDA</strong>
-  <br><br>
+  <strong>ÉVIDA</strong><br><br>
   Découvrez l'évidence.
-  <br><br>
-  © 2026 ÉVIDA
 </footer>
 
-</body>
-    </html>
+<div class="overlay" id="overlay"></div>
+
+<aside class="drawer" id="drawer">
+
+  <div class="drawerHead">
+    <strong>Votre panier</strong>
+
+    <button class="close" id="closeCart">
+      ×
+    </button>
+  </div>
+
+  <div class="cartItems" id="cartItems"></div>
+
+  <div class="total">
+    <span>Total</span>
+    <span id="cartTotal">0,00 €</span>
+  </div>
+
+  <button class="checkout">
+    Commander
+  </button>
+
+</aside>
+
+<div class="productModalOverlay" id="productModalOverlay">
+
+  <div class="productModal">
+
+    <button class="productModalClose" id="productModalClose">
+      ×
+    </button>
+
+    <div class="productModalGrid">
+
+      <div class="productModalVisual">
+        <img id="productModalImage" alt="">
+      </div>
+
+      <div class="productModalInfo">
+
+        <div class="eyebrow" id="productModalCategory"></div>
+
+        <h2 id="productModalName"></h2>
+
+        <div
+          class="productModalPrice"
+          id="productModalPrice"
+        ></div>
+
+        <p
+          class="productDescription"
+          id="productModalDescription"
+        ></p>
+
+        <button
+          class="productModalAdd"
+          id="productModalAdd"
+        >
+          Ajouter au panier
+        </button>
+
+        <a
+          class="sourceLink"
+          id="productSource"
+          target="_blank"
+          rel="noopener"
+        >
+          Voir la source fournisseur
+        </a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+const products = [
+
+  {
+    id:101,
+    category:"Maison",
+    name:"Organiseur coulissant sous évier — 2 niveaux",
+    supplier:"Alibaba",
+    price:24.90,
+    image:"",
+    source:"https://www.alibaba.com/",
+    description:"Un rangement coulissant à deux niveaux conçu pour mieux exploiter l'espace disponible sous un évier."
+  },
+
+  {
+    id:102,
+    category:"Maison",
+    name:"Grand sac de rangement textile 50–75 L",
+    supplier:"Alibaba",
+    price:14.90,
+    image:"",
+    source:"https://www.alibaba.com/",
+    description:"Un grand sac textile pratique pour ranger vêtements, linge de maison et objets saisonniers."
+  },
+
+  {
+    id:103,
+    category:"Maison",
+    name:"Organiseur pliable pour vêtements et jeans",
+    supplier:"Huizhou Ledol Houseware Co., Ltd.",
+    price:14.90,
+    image:"",
+    source:"https://www.alibaba.com/countrysearch/CN/collapsible-drawer-organizer.html",
+    description:"Une solution pliable permettant de séparer et organiser vêtements, jeans ou accessoires."
+  },
+
+  {
+    id:104,
+    category:"Maison",
+    name:"Organiseur rotatif 360°",
+    supplier:"Alibaba",
+    price:19.90,
+    image:"",
+    source:"https://www.alibaba.com/wholesale/storage-organizer.html",
+    description:"Un plateau rotatif pratique pour rendre les petits objets et accessoires plus accessibles."
+  },
+
+  {
+    id:105,
+    category:"Maison",
+    name:"Support mural pour balai et accessoires",
+    supplier:"Alibaba",
+    price:12.90,
+    image:"",
+    source:"https://www.alibaba.com/",
+    description:"Un support mural permettant d'organiser balais, serpillières et autres accessoires ménagers."
+  },
+
+  {
+    id:106,
+    category:"Maison",
+    name:"Panier de rangement pour évier",
+    supplier:"Alibaba",
+    price:12.90,
+    image:"",
+    source:"https://www.alibaba.com/",
+    description:"Un petit rangement pratique permettant de garder éponges et accessoires près de l'évier."
+  },  {
+    id:107,
+    category:"Maison",
+    name:"Organiseur rotatif pour salle de bain",
+    supplier:"Alibaba",
+    price:19.90,
+    image:"",
+    source:"https://www.alibaba.com/",
+    description:"Un rangement rotatif pensé pour organiser facilement produits de soin, cosmétiques et petits accessoires."
+  },
+
+  {
+    id:108,
+    category:"Maison",
+    name:"Rangement pliable multi-usage",
+    supplier:"Alibaba",
+    price:19.90,
+    image:"",
+    source:"https://www.alibaba.com/",
+    description:"Un rangement pliable polyvalent pour la maison, facile à ranger lorsqu'il n'est pas utilisé."
+  },
+
+  {
+    id:109,
+    category:"Innovation",
+    name:"Clip magnétique range-câbles",
+    supplier:"Alibaba",
+    price:9.90,
+    image:"",
+    source:"https://www.alibaba.com/",
+    description:"Un petit clip magnétique conçu pour garder les câbles bien organisés et facilement accessibles."
+  },
+
+  {
+    id:110,
+    category:"Innovation",
+    name:"Support pliable pour ordinateur portable",
+    supplier:"Alibaba",
+    price:24.90,
+    image:"",
+    source:"https://www.alibaba.com/",
+    description:"Un support pliable pour surélever un ordinateur portable et améliorer le confort d'utilisation."
+  },
+
+  {
+    id:111,
+    category:"Innovation",
+    name:"Support pliable pour smartphone",
+    supplier:"Alibaba",
+    price:12.90,
+    image:"",
+    source:"https://www.alibaba.com/",
+    description:"Un support compact et pliable pour poser un smartphone sur un bureau, une table ou une table de chevet."
+  },
+
+  {
+    id:112,
+    category:"Innovation",
+    name:"Pochette organiseur pour câbles et accessoires tech",
+    supplier:"Alibaba",
+    price:19.90,
+    image:"",
+    source:"https://www.alibaba.com/",
+    description:"Une pochette pratique pour ranger câbles, chargeurs, adaptateurs et petits accessoires électroniques."
+  },
+
+  {
+    id:113,
+    category:"Voyage",
+    name:"Pèse-bagage portable",
+    supplier:"Alibaba",
+    price:14.90,
+    image:"",
+    source:"https://www.alibaba.com/",
+    description:"Un pèse-bagage compact permettant de vérifier rapidement le poids d'une valise avant un départ."
+  },
+
+  {
+    id:114,
+    category:"Voyage",
+    name:"Trousse transparente de voyage",
+    supplier:"Alibaba",
+    price:12.90,
+    image:"",
+    source:"https://www.alibaba.com/",
+    description:"Une trousse transparente pratique pour organiser produits de toilette et petits accessoires en voyage."
+  },
+
+  {
+    id:115,
+    category:"Voyage",
+    name:"Set de 7 organiseurs de valise",
+    supplier:"Alibaba",
+    price:24.90,
+    image:"",
+    source:"https://www.alibaba.com/",
+    description:"Un ensemble de sept pochettes de rangement pour mieux organiser vêtements et accessoires dans une valise."
+  },
+
+  {
+    id:116,
+    category:"Voyage",
+    name:"Sac de voyage pliable grande capacité",
+    supplier:"Alibaba",
+    price:24.90,
+    image:"",
+    source:"https://www.alibaba.com/",
+    description:"Un sac de voyage spacieux et pliable, pratique pour les déplacements, week-ends et bagages supplémentaires."
+  },
+
+  {
+    id:117,
+    category:"Animaux",
+    name:"Gourde portable pour chien et chat",
+    supplier:"Alibaba",
+    price:19.90,
+    image:"",
+    source:"https://www.alibaba.com/",
+    description:"Une gourde portable conçue pour permettre à un chien ou un chat de boire facilement pendant les sorties."
+  },
+
+  {
+    id:118,
+    category:"Animaux",
+    name:"Peigne de toilettage pour chien et chat",
+    supplier:"Alibaba",
+    price:14.90,
+    image:"",
+    source:"https://www.alibaba.com/",
+    description:"Un peigne de toilettage pratique pour entretenir régulièrement le pelage des chiens et des chats."
+  },
+
+  {
+    id:119,
+    category:"Animaux",
+    name:"Gamelle pliable de voyage",
+    supplier:"Alibaba",
+    price:14.90,
+    image:"",
+    source:"https://www.alibaba.com/",
+    description:"Une gamelle pliable facile à transporter pour les promenades, déplacements et voyages avec un animal."
+  },
+
+  {
+    id:120,
+    category:"Animaux",
+    name:"Tapis de léchage en silicone",
+    supplier:"Alibaba",
+    price:14.90,
+    image:"",
+    source:"https://www.alibaba.com/",
+    description:"Un tapis en silicone conçu pour occuper l'animal pendant les repas, friandises ou moments calmes."
+  },
+
+  {
+    id:121,
+    category:"Innovation",
+    name:"Pointeur laser vert de présentation <1 mW",
+    supplier:"Alibaba",
+    price:20.00,
+    image:"",
+    source:"https://www.alibaba.com/",
+    description:"Un pointeur laser vert compact destiné aux présentations et usages adaptés, avec puissance annoncée inférieure à 1 mW."
+  },
+
+  {
+    id:122,
+    category:"Innovation",
+    name:"Balance électronique de précision 0,01 g",
+    supplier:"Alibaba",
+    price:20.00,
+    image:"",
+    source:"https://www.alibaba.com/",
+    description:"Une petite balance électronique de précision avec graduation annoncée à 0,01 g pour les petits objets."
+  },
+
+  {
+    id:123,
+    category:"Animaux",
+    name:"Fontaine à eau pour chat 2 L",
+    supplier:"Shenzhen Blackberry E-Commerce Co., Ltd.",
+    price:29.90,
+    image:"https://s.alicdn.com/@sc04/kf/H4f886218e9a54780aeef8a5ecd7277f6C.jpg_300x300.jpg",
+    source:"https://www.alibaba.com/pla/2L-Automatic-Pet-Cat-Water-Fountain_1600178522414.html",
+    description:"Une fontaine à eau automatique de 2 L pour chat et petit animal, avec circulation de l'eau et système de filtration."
+  }
+
+];
+
+let activeCategory = "Tous";
+let cart = [];
+let currentProduct = null;
+
+const grid = document.getElementById("grid");
+const searchInput = document.getElementById("search");
+const cartCount = document.getElementById("cartCount");
+const cartItems = document.getElementById("cartItems");
+const cartTotal = document.getElementById("cartTotal");
+const drawer = document.getElementById("drawer");
+const overlay = document.getElementById("overlay");
+
+const productModalOverlay =
+  document.getElementById("productModalOverlay");
+
+const productModalClose =
+  document.getElementById("productModalClose");
+
+const productModalImage =
+  document.getElementById("productModalImage");
+
+const productModalCategory =
+  document.getElementById("productModalCategory");
+
+const productModalName =
+  document.getElementById("productModalName");
+
+const productModalPrice =
+  document.getElementById("productModalPrice");
+
+const productModalDescription =
+  document.getElementById("productModalDescription");
+
+const productModalAdd =
+  document.getElementById("productModalAdd");
+
+const productSource =
+  document.getElementById("productSource");
+
+function euro(value){
+  return value.toLocaleString(
+    "fr-FR",
+    {
+      style:"currency",
+      currency:"EUR"
+    }
+  );
+}
+
+function escapeHtml(value){
+  return String(value)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+function renderProducts(){
+
+  const query =
+    searchInput.value.trim().toLowerCase();
+
+  const filtered =
+    products.filter(product=>{
+
+      const categoryOk =
+        activeCategory === "Tous" ||
+        product.category === activeCategory;
+
+      const searchOk =
+        !query ||
+        product.name.toLowerCase().includes(query) ||
+        product.category.toLowerCase().includes(query) ||
+        product.description.toLowerCase().includes(query);
+
+      return categoryOk && searchOk;
+    });
+
+  if(!filtered.length){
+
+    grid.innerHTML = `
+      <div
+        style="
+          grid-column:1/-1;
+          background:#fff;
+          border:1px solid var(--line);
+          border-radius:18px;
+          padding:30px;
+          text-align:center;
+          color:var(--muted);
+        "
+      >
+        Aucun produit ne correspond à votre recherche.
+      </div>
+    `;
+
+    return;
+  }
+
+  grid.innerHTML =
+    filtered.map(product=>{
+
+      const imageHtml =
+        product.image
+        ? `
+          <img
+            src="${escapeHtml(product.image)}"
+            alt="${escapeHtml(product.name)}"
+            loading="lazy"
+            onerror="
+              this.style.display='none';
+              this.nextElementSibling.style.display='flex';
+            "
+          >
+
+          <div
+            class="imageFallback"
+            style="display:none"
+          >
+            ${escapeHtml(product.name)}
+          </div>
+        `
+        : `
+          <div class="imageFallback">
+            ${escapeHtml(product.name)}
+          </div>
+        `;
+
+      return `
+        <article class="product">
+
+          <div class="visual">
+            ${imageHtml}
+          </div>
+
+          <div class="body">
+
+            <div class="tag">
+              ${escapeHtml(product.category)}
+            </div>
+
+            <h3>
+              ${escapeHtml(product.name)}
+            </h3>
+
+            <div class="supplier">
+              Fournisseur : ${escapeHtml(product.supplier)}
+            </div>
+
+            <div class="foot">
+
+              <div class="price">
+                ${euro(product.price)}
+              </div>
+
+              <button
+                class="add"
+                type="button"
+                onclick="addToCart(${product.id})"
+              >
+                Ajouter
+              </button>
+
+            </div>
+
+            <button
+              class="details"
+              type="button"
+              onclick="openProduct(${product.id})"
+            >
+              Voir le produit
+            </button>
+
+          </div>
+
+        </article>
+      `;
+
+    }).join("");
+}
+
+function addToCart(id){
+
+  const product =
+    products.find(item=>item.id===id);
+
+  if(!product){
+    return;
+  }
+
+  const existing =
+    cart.find(item=>item.id===id);
+
+  if(existing){
+    existing.quantity++;
+  }else{
+    cart.push({
+      id:product.id,
+      name:product.name,
+      price:product.price,
+      quantity:1
+    });
+  }
+
+  renderCart();
+}
+
+function changeQuantity(id,change){
+
+  const item =
+    cart.find(product=>product.id===id);
+
+  if(!item){
+    return;
+  }
+
+  item.quantity += change;
+
+  if(item.quantity <= 0){
+    cart =
+      cart.filter(product=>product.id!==id);
+  }
+
+  renderCart();
+}
+
+function removeFromCart(id){
+
+  cart =
+    cart.filter(product=>product.id!==id);
+
+  renderCart();
+}function renderCart(){
+
+  const totalQuantity =
+    cart.reduce(
+      (sum,item)=>sum + item.quantity,
+      0
+    );
+
+  cartCount.textContent = totalQuantity;
+
+  if(!cart.length){
+
+    cartItems.innerHTML = `
+      <div
+        style="
+          padding:30px 0;
+          text-align:center;
+          color:var(--muted);
+        "
+      >
+        Votre panier est vide.
+      </div>
+    `;
+
+    cartTotal.textContent = euro(0);
+
+    return;
+  }
+
+  cartItems.innerHTML =
+    cart.map(item=>`
+
+      <div class="cartItem">
+
+        <div class="cartItemTop">
+
+          <div>
+            <strong>
+              ${escapeHtml(item.name)}
+            </strong>
+
+            <div
+              style="
+                margin-top:5px;
+                color:var(--muted);
+                font-size:12px;
+              "
+            >
+              ${euro(item.price)} l'unité
+            </div>
+          </div>
+
+          <strong>
+            ${euro(item.price * item.quantity)}
+          </strong>
+
+        </div>
+
+        <div class="cartActions">
+
+          <button
+            type="button"
+            onclick="changeQuantity(${item.id},-1)"
+          >
+            −
+          </button>
+
+          <span>
+            ${item.quantity}
+          </span>
+
+          <button
+            type="button"
+            onclick="changeQuantity(${item.id},1)"
+          >
+            +
+          </button>
+
+          <button
+            type="button"
+            onclick="removeFromCart(${item.id})"
+            style="margin-left:auto"
+          >
+            Supprimer
+          </button>
+
+        </div>
+
+      </div>
+
+    `).join("");
+
+  const total =
+    cart.reduce(
+      (sum,item)=>
+        sum + item.price * item.quantity,
+      0
+    );
+
+  cartTotal.textContent =
+    euro(total);
+}
+
+function openCart(){
+
+  drawer.classList.add("open");
+  overlay.classList.add("show");
+  document.body.style.overflow = "hidden";
+}
+
+function closeCart(){
+
+  drawer.classList.remove("open");
+  overlay.classList.remove("show");
+  document.body.style.overflow = "";
+}
+
+function openProduct(id){
+
+  const product =
+    products.find(item=>item.id===id);
+
+  if(!product){
+    return;
+  }
+
+  currentProduct = product;
+
+  productModalCategory.textContent =
+    product.category;
+
+  productModalName.textContent =
+    product.name;
+
+  productModalPrice.textContent =
+    euro(product.price);
+
+  productModalDescription.textContent =
+    product.description;
+
+  productSource.href =
+    product.source || "#";
+
+  if(product.image){
+
+    productModalImage.src =
+      product.image;
+
+    productModalImage.alt =
+      product.name;
+
+    productModalImage.style.display =
+      "block";
+
+  }else{
+
+    productModalImage.removeAttribute("src");
+
+    productModalImage.alt =
+      product.name;
+
+    productModalImage.style.display =
+      "none";
+  }
+
+  productModalOverlay.classList.add("show");
+
+  document.body.style.overflow =
+    "hidden";
+}
+
+function closeProduct(){
+
+  productModalOverlay.classList.remove("show");
+
+  currentProduct = null;
+
+  document.body.style.overflow = "";
+}
+
+document
+  .getElementById("openCart")
+  .addEventListener(
+    "click",
+    openCart
+  );
+
+document
+  .getElementById("closeCart")
+  .addEventListener(
+    "click",
+    closeCart
+  );
+
+overlay.addEventListener(
+  "click",
+  closeCart
+);
+
+productModalClose.addEventListener(
+  "click",
+  closeProduct
+);
+
+productModalOverlay.addEventListener(
+  "click",
+  event=>{
+
+    if(event.target === productModalOverlay){
+      closeProduct();
+    }
+  }
+);
+
+productModalAdd.addEventListener(
+  "click",
+  ()=>{
+
+    if(!currentProduct){
+      return;
+    }
+
+    addToCart(currentProduct.id);
+  }
+);
+
+searchInput.addEventListener(
+  "input",
+  renderProducts
+);
+
+document
+  .querySelectorAll(".filter")
+  .forEach(button=>{
+
+    button.addEventListener(
+      "click",
+      ()=>{
+
+        document
+          .querySelectorAll(".filter")
+          .forEach(item=>
+            item.classList.remove("active")
+          );
+
+        button.classList.add("active");
+
+        activeCategory =
+          button.dataset.category;
+
+        renderProducts();
+      }
+    );
+  });
+
+document.addEventListener(
+  "keydown",
+  event=>{
+
+    if(event.key === "Escape"){
+
+      closeCart();
+      closeProduct();
+    }
+  }
+);
+
+renderProducts();
+renderCart();
+
+</script></body>
+</html>
